@@ -1,0 +1,25 @@
+###
+POST http://localhost:1218/api/notes
+Content-Type: application/json
+
+{
+    "title": "Sample Note",
+    "content": "This is a sample note content."
+}   
+
+###
+GET http://localhost:1218/api/notes
+Content-Type: application/json  
+
+###
+PUT http://localhost:1218/api/notes/688eea929eef97dc100328ce
+Content-Type: application/json
+
+{
+    "title": "Updated Note",
+    "content": "This is the updated content of the note."
+}   
+
+###
+DELETE http://localhost:1218/api/notes/688ee83d9110240c7fbe5e29
+Content-Type: application/json  
