@@ -3,8 +3,8 @@ POST http://localhost:1218/api/notes
 Content-Type: application/json
 
 {
-    "title": "Sample Note",
-    "content": "This is a sample note content."
+    "title": "Notes App",
+    "content": "working on this notes app."
 }   
 
 ###
