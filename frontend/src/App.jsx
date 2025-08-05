@@ -10,7 +10,7 @@ const App = () => {
   const deleteNote = async (id) => {
     try {
       await axios.delete(`http://localhost:1218/api/notes/${id}`)
-
+      setNotes(notes.filter(note => note._id !== id))
     } catch (error) {
       console.error("Error deleting note", error)
     }
@@ -20,16 +20,22 @@ const App = () => {
     axios.get('http://localhost:1218/api/notes')
       .then(res => setNotes(res.data))
       .catch(err => console.error(err))
-  },[notes])
+  },[])
   return (
-    <div>
+    <div className='bg-accent min-h-screen'>
       <header>
         <h1>Chun Notes </h1>
         <Link to='/create'>create note</Link>
       </header>
       {notes.length == 0 ? <h1>No notes</h1> :
         notes.map(note => <Card title={note.title} content={note.content} date={note.date} key={note._id} delete={deleteNote} id={note._id}/>)
-    }</div>
+    }
+    
+    <h1 className="text-3xl font-bold text-pink-500 underline">
+      Hello world!
+    </h1>
+    </div>
+    
   )
 }
 
