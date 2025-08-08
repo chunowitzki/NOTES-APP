@@ -10,7 +10,7 @@ const App = () => {
 
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:1218/api/notes/${id}`)
+      await axios.delete(`https://notes-app-88by.onrender.com/api/notes/${id}`)
       setNotes(notes.filter(note => note._id !== id))
     } catch (error) {
       console.error("Error deleting note", error)
@@ -18,7 +18,7 @@ const App = () => {
   }
 
   useEffect(()=> {
-    axios.get('http://localhost:1218/api/notes')
+    axios.get('https://notes-app-88by.onrender.com/api/notes')
       .then(res => setNotes(res.data))
       .catch(err => console.error(err))
   },[])
