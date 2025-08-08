@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
     });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Notes API');
+    res.redirect("/api/notes");
 });
 
 app.get('/api/notes', async (req, res) => {
