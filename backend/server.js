@@ -3,13 +3,14 @@ import dotenv from 'dotenv';
 import Note from './models/Notes.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
+dotenv.config();
+
 
 const app = express();
 const port = process.env.PORT || 1218;
 
 app.use(cors());
 app.use(express.json());
-dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
@@ -20,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI)
     });
 
 app.get('/', (req, res) => {
-    res.redirect("/api/notes");
+    res.send('API is up')
 });
 
 app.get('/api/notes', async (req, res) => {

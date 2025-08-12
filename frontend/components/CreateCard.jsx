@@ -12,7 +12,7 @@ const CreateCard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post('http://localhost:1218/api/notes', {
+            await axios.post('https://notes-app-88by.onrender.com/api/notes', {
                 title, content,
 
             })
